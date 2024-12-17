@@ -26,14 +26,13 @@
 	<true/>
 	<key>NSAppTransportSecurity</key>
 	<dict>
-	  <!-- Do not change NSAllowsArbitraryLoads to true, or you will risk app rejection! -->
 		<key>NSAllowsArbitraryLoads</key>
 		<false/>
 		<key>NSAllowsLocalNetworking</key>
 		<true/>
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string></string>
+	<string/>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIRequiredDeviceCapabilities</key>
@@ -48,5 +47,26 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>UIAppFonts</key>
+	<array>
+		<string>NotoSerifDisplay-Black.ttf</string>
+		<string>NotoSerifDisplay-BlackItalic.ttf</string>
+		<string>NotoSerifDisplay-Bold.ttf</string>
+		<string>NotoSerifDisplay-BoldItalic.ttf</string>
+		<string>NotoSerifDisplay-ExtraBold.ttf</string>
+		<string>NotoSerifDisplay-ExtraBoldItalic.ttf</string>
+		<string>NotoSerifDisplay-ExtraLight.ttf</string>
+		<string>NotoSerifDisplay-ExtraLightItalic.ttf</string>
+		<string>NotoSerifDisplay-Italic.ttf</string>
+		<string>NotoSerifDisplay-Light.ttf</string>
+		<string>NotoSerifDisplay-LightItalic.ttf</string>
+		<string>NotoSerifDisplay-Medium.ttf</string>
+		<string>NotoSerifDisplay-MediumItalic.ttf</string>
+		<string>NotoSerifDisplay-Regular.ttf</string>
+		<string>NotoSerifDisplay-SemiBold.ttf</string>
+		<string>NotoSerifDisplay-SemiBoldItalic.ttf</string>
+		<string>NotoSerifDisplay-Thin.ttf</string>
+		<string>NotoSerifDisplay-ThinItalic.ttf</string>
+	</array>
 </dict>
 </plist>
