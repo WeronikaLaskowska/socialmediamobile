@@ -9,6 +9,7 @@ export interface UserStoryProps {
   id: number;
   profileImage?: string;
   noName?: boolean;
+  onPress: () => void;
 }
 
 function UserStory({
@@ -16,9 +17,10 @@ function UserStory({
   id,
   profileImage,
   noName,
+  onPress,
 }: UserStoryProps): React.JSX.Element {
   return (
-    <TouchableOpacity key={id}>
+    <TouchableOpacity onPress={onPress} key={id}>
       <View style={style.userStoryImageWrapper}>
         {profileImage ? (
           <Image style={style.userStoryImage} source={{uri: profileImage}} />

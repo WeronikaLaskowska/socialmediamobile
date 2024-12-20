@@ -17,88 +17,89 @@ import homeStyle from './style';
 import globalStyle from '../../../assets/styles/globals';
 import {Routes} from '../../../navigation/routes';
 import {NavigationProp} from '@react-navigation/native';
+
+export const userStories = [
+  {
+    id: 1,
+    firstName: 'John',
+    profileImage: 'https://randomuser.me/api/portraits/men/1.jpg',
+  },
+  {
+    id: 2,
+    firstName: 'Annie',
+    profileImage: undefined,
+  },
+  {
+    id: 3,
+    firstName: 'Adam',
+    profileImage: 'https://randomuser.me/api/portraits/men/2.jpg',
+  },
+  {
+    id: 4,
+    firstName: 'Annie',
+    profileImage: 'https://randomuser.me/api/portraits/women/2.jpg',
+  },
+  {
+    id: 5,
+    firstName: 'Julie',
+    profileImage: 'https://randomuser.me/api/portraits/women/1.jpg',
+  },
+  {
+    id: 6,
+    firstName: 'Alex',
+    profileImage: 'https://randomuser.me/api/portraits/men/3.jpg',
+  },
+  {
+    id: 7,
+    firstName: 'Natalie',
+    profileImage: 'https://randomuser.me/api/portraits/women/3.jpg',
+  },
+  {
+    id: 8,
+    firstName: 'Joseph',
+    profileImage: 'https://randomuser.me/api/portraits/men/4.jpg',
+  },
+  {
+    id: 9,
+    firstName: 'Amanda',
+    profileImage: 'https://randomuser.me/api/portraits/women/4.jpg',
+  },
+  {
+    id: 10,
+    firstName: 'Amanda',
+    profileImage: 'https://randomuser.me/api/portraits/women/4.jpg',
+  },
+  {
+    id: 11,
+    firstName: 'Amanda',
+    profileImage: 'https://randomuser.me/api/portraits/women/4.jpg',
+  },
+  {
+    id: 12,
+    firstName: 'Amanda',
+    profileImage: 'https://randomuser.me/api/portraits/women/4.jpg',
+  },
+  {
+    id: 13,
+    firstName: 'Amanda',
+    profileImage: 'https://randomuser.me/api/portraits/women/4.jpg',
+  },
+  {
+    id: 14,
+    firstName: 'Amanda',
+    profileImage: 'https://randomuser.me/api/portraits/women/4.jpg',
+  },
+  {
+    id: 15,
+    firstName: 'Amanda',
+    profileImage: 'https://randomuser.me/api/portraits/women/4.jpg',
+  },
+];
 function Home({
   navigation,
 }: {
   navigation: NavigationProp<any>;
 }): React.JSX.Element {
-  const userStories = [
-    {
-      id: 1,
-      firstName: 'John',
-      profileImage: 'https://randomuser.me/api/portraits/men/1.jpg',
-    },
-    {
-      id: 2,
-      firstName: 'Annie',
-      profileImage: undefined,
-    },
-    {
-      id: 3,
-      firstName: 'Adam',
-      profileImage: 'https://randomuser.me/api/portraits/men/2.jpg',
-    },
-    {
-      id: 4,
-      firstName: 'Annie',
-      profileImage: 'https://randomuser.me/api/portraits/women/2.jpg',
-    },
-    {
-      id: 5,
-      firstName: 'Julie',
-      profileImage: 'https://randomuser.me/api/portraits/women/1.jpg',
-    },
-    {
-      id: 6,
-      firstName: 'Alex',
-      profileImage: 'https://randomuser.me/api/portraits/men/3.jpg',
-    },
-    {
-      id: 7,
-      firstName: 'Natalie',
-      profileImage: 'https://randomuser.me/api/portraits/women/3.jpg',
-    },
-    {
-      id: 8,
-      firstName: 'Joseph',
-      profileImage: 'https://randomuser.me/api/portraits/men/4.jpg',
-    },
-    {
-      id: 9,
-      firstName: 'Amanda',
-      profileImage: 'https://randomuser.me/api/portraits/women/4.jpg',
-    },
-    {
-      id: 10,
-      firstName: 'Amanda',
-      profileImage: 'https://randomuser.me/api/portraits/women/4.jpg',
-    },
-    {
-      id: 11,
-      firstName: 'Amanda',
-      profileImage: 'https://randomuser.me/api/portraits/women/4.jpg',
-    },
-    {
-      id: 12,
-      firstName: 'Amanda',
-      profileImage: 'https://randomuser.me/api/portraits/women/4.jpg',
-    },
-    {
-      id: 13,
-      firstName: 'Amanda',
-      profileImage: 'https://randomuser.me/api/portraits/women/4.jpg',
-    },
-    {
-      id: 14,
-      firstName: 'Amanda',
-      profileImage: 'https://randomuser.me/api/portraits/women/4.jpg',
-    },
-    {
-      id: 15,
-      firstName: 'Amanda',
-      profileImage: 'https://randomuser.me/api/portraits/women/4.jpg',
-    },
-  ];
   const userPosts = [
     {
       firstName: 'Allision',
@@ -195,9 +196,7 @@ function Home({
     <SafeAreaView style={globalStyle.backgroundWhite}>
       <View style={homeStyle.header}>
         <Title text={"Let's explore"} />
-        <TouchableOpacity
-          onPress={() => navigation.navigate(Routes.Profile)}
-          style={homeStyle.messageIcon}>
+        <TouchableOpacity style={homeStyle.messageIcon}>
           <FontAwesomeIcon color="#898DAE" icon={faEnvelope} />
           <View style={homeStyle.messageCounter}>
             <Text style={homeStyle.messageCounterText}>2</Text>
@@ -229,6 +228,9 @@ function Home({
                     key={item.id}
                     style={{marginHorizontal: horizontalScale(10)}}>
                     <UserStory
+                      onPress={() =>
+                        navigation.navigate(Routes.Profile, {userId: item.id})
+                      }
                       firstName={item.firstName}
                       id={item.id}
                       profileImage={item.profileImage}
