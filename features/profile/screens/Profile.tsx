@@ -4,6 +4,7 @@ import globalStyle from '../../../assets/styles/globals';
 import {NavigationProp, useRoute} from '@react-navigation/native';
 import {userStories} from '../../dashboard/screens/Home';
 import style from './style';
+import {ProfileTabsNavigation} from '../../../navigation/MainNavigation';
 
 const Profile = ({navigation}: {navigation: NavigationProp<any>}) => {
   const route = useRoute();
@@ -47,6 +48,9 @@ const Profile = ({navigation}: {navigation: NavigationProp<any>}) => {
             <Text style={style.counterText}>Posts</Text>
           </View>
         </View>
+      </View>
+      <View style={globalStyle.backgroundWhite}>
+        <ProfileTabsNavigation />
       </View>
     </SafeAreaView>
   );

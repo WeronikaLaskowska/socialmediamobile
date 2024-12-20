@@ -13,6 +13,10 @@ const style = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     marginVertical: verticalScale(20),
+    borderBottomWidth: 1,
+    paddingBottom: verticalScale(20),
+    marginHorizontal: horizontalScale(20),
+    borderColor: '#EFF2F6',
   },
   profileImageContainer: {
     borderWidth: 2,
@@ -53,6 +57,23 @@ const style = StyleSheet.create({
     color: '#79869F',
     fontSize: 16,
     fontWeight: 400,
+  },
+  profileContentWrapper: {
+    display: 'flex',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'space-between',
+    marginHorizontal: horizontalScale(30),
+    flex: 1,
+    paddingVertical: 20,
+    gap: 10,
+    backgroundColor: '#fff',
+  },
+  profileContentElement: {
+    width: 150,
+    height: 100,
+    backgroundColor: '#D9D9D9',
+    borderRadius: 10,
   },
 });
 
